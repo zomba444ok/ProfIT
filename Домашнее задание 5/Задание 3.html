@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let N, sum, i;
+            N = Number(prompt("Введите число N"));
+            if (Number.isNaN(N)){
+                document.write('Введено значение, которое не является числом');
+                throw ''; // завершает выполнение скрипта, если было введено не число
+            }
+            sum = 1;
+            i = 1;
+            do{
+                sum *= (1 + Math.abs(Math.sin(i / 10.0)));
+                i += 1;
+            } while (sum <= N)
+            document.write(`Результат: ${sum}`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

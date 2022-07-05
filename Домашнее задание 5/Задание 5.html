@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let arr = [];
+            let start = 452021;
+            let step = 1, min_div, max_div;
+            do{
+                min_div = 0;
+                max_div = 0;
+                for(let i = 2; i <= Math.trunc((start + step) / 2); i++)
+                    if ( (start + step) % i == 0 ){
+                        min_div = i;
+                        break;
+                    }
+                for(let j = Math.trunc((start + step) / 2); j >= 2; j--)
+                if ( (start + step) % j == 0 ){
+                        max_div = j;
+                        break;
+                }
+                if(min_div > 0  && max_div > 0 && min_div != max_div){
+                    //document.write(`${start + step}, ${min_div}, ${max_div} </br> `);
+                    arr = arr.concat(Number(min_div + max_div));
+                }
+                step += 1;
+            }
+            while(arr.length < 5)
+            arr = arr.sort(function (a, b) {  return a - b;  });
+            for (const x of arr) 
+                document.write(`${x} </br>`);
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

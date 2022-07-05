@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let x, N, sum, i;
+            x = Number(prompt("Введите число x"));
+            N = Number(prompt("Введите число N"));
+            if (Number.isNaN(x) || Number.isNaN(N)){
+                document.write('Введено значение, которое не является числом');
+                throw ''; // завершает выполнение скрипта, если было введено не число
+            }
+            // Я не думаю, что это будет сильным отклонением от правил
+            sum = x;
+            i = 0
+            if (sum > N)
+                ;
+            else
+                do {
+                    sum += (Math.pow(x, i+2) + i + 2) / (x + i + 1);
+                    i += 1;
+                }
+                while (sum <= N);
+            document.write(`Результат: ${sum}`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

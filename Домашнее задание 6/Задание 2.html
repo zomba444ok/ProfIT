@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let N;
+            let arr = [];
+            let result = [];
+            N = Number(prompt('Введите размер массива'));
+            for(let i = 0; i < N; i++) {
+                arr.push(Math.floor(Math.random() * 100));
+                if (arr[i] % 2 == 0)
+                    result.push(arr[i]);
+            }
+            document.write(arr);
+            document.write('</br>')
+            if(result.length > 0)
+                document.write(result);
+            else
+                document.write('В последовательности нет чётных элементов');
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let E, sum;
+            E = Number(prompt("Введите число E"));
+            if (Number.isNaN(E)){
+                document.write('Введено значение, которое не является числом');
+                throw ''; // завершает выполнение скрипта, если было введено не число
+            }
+            sum = 0;
+            for(let k = 1; 4 * k / (k * k + 8 * Math.sqrt(k)) <= E; k++ ) {
+                sum +=  4 * k / (k * k + 8 * Math.sqrt(k));
+                if(k > 1e7) {
+                    document.write(`Выполнение цикла прервано на  ${k} итерации </br>`);
+                    break;
+                }
+            }
+            document.write(`Результат: ${sum}`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

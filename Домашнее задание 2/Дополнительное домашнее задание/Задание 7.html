@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script>
+            let arr = [1.8432611, 1.83, 5.1];
+            let round = [0, 2, 4];
+            let result, temp;
+            for(let i = 0; i < arr.length; i++)
+                for(let j = 0; j < round.length; j++){
+                    // Определяем целую часть выражения, над которой не нужно проводить операции
+                    temp = arr[i] * 10 ** round[j];
+                    // Определяем дробную часть выражения, над которой необходимо провести операции по округлению и получаем результат
+                    result = (temp - temp % 1 +((temp % 1) * 2) -((temp % 1) * 2) % 1 ) / 10 ** round[j];
+                    console.log(`Число ${arr[i]}, округление до знака ${round[j]}, результат ${result.toFixed(round[j])}`);
+                }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

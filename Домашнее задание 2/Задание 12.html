@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            let dt = new Date(); // По умолчанию задана текущая дата
+            let DayOfWeek;
+            // номер дня недели приводится к ISO стандарту,
+            // т.е. понедельник будет иметь номер 1, воскресенье - номер 7
+            DayOfWeek = dt.getDay() == 0 ? 7 : dt.getDay();
+            console.log(`Номер текущего дня недели: ${DayOfWeek}`);
+            dt.setFullYear(year = 2022, month = 4, date = 15);
+            DayOfWeek = dt.getDay() == 0 ? 7 : dt.getDay();
+            console.log(`Номер дня недели заданной даты: ${DayOfWeek}`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

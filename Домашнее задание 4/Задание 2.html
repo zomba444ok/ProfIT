@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let x1, y1, x2, y2, x3, y3;
+            let r1, r2;
+            x1 = Number(prompt('Введите координату X точки A'));
+            y1 = Number(prompt('Введите координату Y точки A'));
+            x2 = Number(prompt('Введите координату X точки B'));
+            y2 = Number(prompt('Введите координату Y точки B'));
+            if (x1 > 0 && y1 > 0)
+                document.write(`Точка (${x1}, ${y1}) находится в первом квадранте </br>`);
+            else
+                if (x1 < 0 && y1 > 0)
+                    document.write(`Точка (${x1}, ${y1}) находится во втором квадранте </br>`);
+                else
+                    if (x1 < 0 && y1 < 0)
+                        document.write(`Точка (${x1}, ${y1}) находится в 3 квадранте </br>`);
+                    else
+                        if (x1 > 0 && y1 < 0)
+                            document.write(`Точка (${x1}, ${y1}) находится в 4 квадранте </br>`);
+                        else
+                            document.write(`Точка (${x1}, ${y1}) находится вне квадрантов </br>`);
+            
+            if (x2 > 0 && y2 > 0)
+                document.write(`Точка (${x2}, ${y2}) находится в первом квадранте </br>`);
+            else
+                if (x2 < 0 && y2 > 0)
+                    document.write(`Точка (${x2}, ${y2}) находится во втором квадранте </br>`);
+                else
+                    if (x2 < 0 && y2 < 0)
+                        document.write(`Точка (${x2}, ${y2}) находится в 3 квадранте </br>`);
+                    else
+                        if (x2 > 0 && y2 < 0)
+                            document.write(`Точка (${x2}, ${y2}) находится в 4 квадранте </br>`);
+                        else
+                            document.write(`Точка (${x2}, ${y2}) находится вне квадрантов </br>`);
+            
+            r1 = Math.sqrt(x1 ** 2 + y1 ** 2);
+            r2 = Math.sqrt(x2 ** 2 + y2 ** 2);
+            if (r1 > r2)
+                document.write(`Точка (${x1}, ${y1}) отстоит дальше от начала координат`);
+            else
+                document.write(`Точка (${x2}, ${y2}) отстоит дальше от начала координат`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

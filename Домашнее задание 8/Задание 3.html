@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            'use strict';
+            function removeExtraSpace(s){
+                let result = '';
+                for(let i = 0; i < s.length; i++)
+                    if(s[i] != ' ')
+                        result += s[i];
+                    else
+                        try {
+                            if(s[i+1] == ' ')
+                                continue;
+                            else
+                                result += s[i];
+                        }
+                        catch {
+                            result += s[i];
+                        }
+                return result;
+            }
+
+            let string = prompt('Введите строку, из которой нужно удалить лишние пробелы');
+            console.log(removeExtraSpace(string));
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

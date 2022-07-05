@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script>
+            let s_base, s_full, r_base, l, h, v;
+            s_base = Number(prompt('Введите площадь основания конуса'));
+            r_base = Math.sqrt(s_base / Math.PI); // радиус основания
+            h = 2 * r_base; // высота конуса
+            // боковая сторона = гипотенуза прямоугольного треугольника
+            l = Math.sqrt(r_base ** 2 + h ** 2);
+            v = 1/3 * h * s_base; // объём конуса
+            s_full = Math.PI * r_base * l + s_base; // Площадь полной поверхности конуса
+            document.write(`Площадь основания конуса : ${s_base} </br>`);
+            document.write(`Радиус основания конуса : ${r_base}  </br>`);
+            document.write(`Высота конуса : ${h}  </br>`);
+            document.write(`Длина образующей конуса : ${l}  </br>`);
+            document.write(`Площадь полной поверхности конуса : ${s_full}  </br>`);
+            document.write(`Объём конуса : ${v}  </br>`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

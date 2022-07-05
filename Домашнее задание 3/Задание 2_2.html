@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            let x, y, z, result;
+            // Вероятность появления истины/лжи - 50%
+            x = Boolean(Math.round(Math.random()));
+            y = Boolean((Math.round(Math.random())));
+            z = Boolean(Math.round(Math.random()));
+            // P -> Q === not P or Q
+            // (x  * y) -> (y = z) === not (x and y) or (y = z)
+            result = !(x && y) || (y === z);
+            document.write(`x = ${x}, y = ${y}, z = ${z} </br>`);
+            document.write(`(x  * y) -> (y = z) = ${result}`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

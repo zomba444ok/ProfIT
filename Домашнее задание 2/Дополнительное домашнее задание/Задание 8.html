@@ -1,0 +1,18 @@
+<html>
+
+<head>
+    <script>
+        let year = 2022, month = 1; // нумерация месяцов начинается с нуля
+        let dt = new Date();
+        // добавляем 1 месяц к номеру месяца, и вводим 0 дней, 
+        // чтобы получить последний день предыдущего месяца
+        dt.setFullYear(year, month + 1, 0);
+        console.log(`год: ${year}, месяц: ${month}, последний день месяца: ${dt.getDate()}`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

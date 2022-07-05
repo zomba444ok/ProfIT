@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let J;
+            let arr = [], result = [];
+            J = Number(prompt('Введите размер массива'));
+            for(let i = 0; i < J; i++)
+                arr.push(Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100));
+            document.write(arr, '</br>');
+            for(let i = 0; i < J; i++)
+                if(arr[i] > 0)
+                    result.push(arr[i]);
+            
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

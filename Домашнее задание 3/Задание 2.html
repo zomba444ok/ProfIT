@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            let l_circle, r_circle,  s_circle, a_square;
+            l_circle = Number(prompt('Введите длину окружности'));
+            r_circle = l_circle / ( 2 * Math.PI); // радиус окружности
+            s_circle = Math.PI * r_circle ** 2;
+            // a_square ** 2 = s_circle; a_square = s_circle ** 0.5
+            a_square = s_circle ** 0.5 // сторона квадрата
+            document.write(`Длина окружности : ${l_circle} </br>`);
+            document.write(`Радиус окружности : ${r_circle}  </br>`);
+            document.write(`Площадь круга : ${s_circle}  </br>`);
+            document.write(`Cторона квадрата, площадь которого равна площади круга : ${a_square} </br>`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+                border-collapse: collapse;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <p>
+        Даны две числовые матрицы A(M, N) и B(M, L).
+        </br>Получить третью результирующую матрицу С суммированием элементов каждой строки матрицы В с алгебраической суммой элементов соответствующей строки матрицы А.
+        </br>Напечатать матрицу С, после чего вывести на печать все ее элементы в порядке возрастания.
+        </p>
+        <script>
+            "use strict";
+            function printMatrix(matrix, name){
+                // Печать матрицы
+                document.write(`<table style=\"width:15%\"><tr>${name} (${matrix.length}, ${matrix[0].length})</tr>`);
+                for(let i = 0; i < matrix.length; i++) {
+                    document.write('<tr>')
+                    for(let j = 0; j < matrix[i].length; j++)
+                        document.write(`<td>${matrix[i][j]}</td>`);
+                    document.write('</tr>')
+                }
+                document.write('</table> </br>')
+            }
+            function printFlatMatrix(matrix, name, M, L){
+                // Печать плоской матрицы
+                document.write(`<table style=\"width:15%\"><tr>${name} (${M}, ${L})</tr>`);
+                for(let i = 0; i < M; i++) {
+                    document.write('<tr>')
+                    for(let j = 0; j < L; j++)
+                        document.write(`<td>${FlatC[i*L+j]}</td>`);
+                    document.write('</tr>')
+                }
+                document.write('</table> </br>')
+            }
+            let M, N, L;
+            let A = [], B = [], C = [];
+            let tmp, FlatC = [], sortC = [];
+            M = Number(prompt("Введите положительное число M:"));
+            N = Number(prompt("Введите положительное число N:"));
+            L = Number(prompt("Введите положительное число L:"));
+            if(M > 0 && N > 0 && L > 0)
+                ;
+            else {
+                document.write(`M = ${M}, N = ${N}, L = ${L} </br>`);
+                document.write("Как минимум одно число введено неправильно </br>");
+                throw ''; // завершает выполнение скрипта, если было введено не число
+            }
+            // Заполнение матриц случайными положительными числами в интервале 0-99
+            for(let i = 0; i < M; i++) {
+                A.push([]);
+                B.push([]);
+                for(let j = 0; j < N; j++ )
+                    A[i].push(Math.floor(Math.random() * 100));
+                for(let j = 0; j < L; j++ )
+                    B[i].push(Math.floor(Math.random() * 100));
+            }
+            printMatrix(A, 'Матрица А');
+            printMatrix(B, 'Матрица B');
+            // Вычисление матрицы C
+            for(let i = 0; i < M; i++){
+                C.push([]);
+                tmp = A[i].reduce((a, b) => a + b, 0); // алгебраическая сумма элементов
+                for(let j = 0; j < L; j++)
+                    C[i].push(B[i][j] + tmp);
+            }
+            printMatrix(C, 'Матрица С');
+            // сортировка элементов матрицы
+            FlatC = C.flat(1);
+            for(let i = 0; i < FlatC.length-1; i++)
+                for(let j = 0; j < FlatC.length-i; j++)
+                    if(FlatC[j] >  FlatC[j+1]){
+                        tmp = FlatC[j];
+                        FlatC[j] = FlatC[j+1];
+                        FlatC[j+1] = tmp;
+                    }
+            // Печать матрицы с отсортированными элементами
+            printFlatMatrix(FlatC, 'Матрица C (сорт)', M, L);
+        </script>
+    </body>
+</html>

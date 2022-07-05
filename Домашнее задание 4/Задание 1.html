@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let x1, y1, x2, y2, x3, y3;
+            let s1, s2, s3;
+            x1 = Number(prompt('Введите координату X точки A'));
+            y1 = Number(prompt('Введите координату Y точки A'));
+            x2 = Number(prompt('Введите координату X точки B'));
+            y2 = Number(prompt('Введите координату Y точки B'));
+            x3 = Number(prompt('Введите координату X точки C'));
+            y3 = Number(prompt('Введите координату Y точки C'));
+            s1 = Math.PI * (x1 ** 2 + y1 ** 2); // Площадь круга с радиусом 0A
+            s2 = (x2 ** 2 + y2 ** 2); // Площадь квадрата с радиусом 0B
+            s3 = Math.sqrt((x3 - x2) ** 2 + (y3 - y2) ** 2) * Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2); // площадь прямоугольника
+            if( s1 >= s2 && s1 >= s3)
+                document.write(`Самую большую площадь ${s1} имеет круг с радиусом 0А </br>`);
+            else
+                if (s2 >= s1 && s2 >= s3)
+                    document.write(`Самую большую площадь ${s2} имеет квадрат с радиусом 0B </br>`);
+                else
+                    document.write(`Самую большую площадь ${s3} имеет прямоугольник со сторонами AC и BC </br>`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script>
+            let a_prism, v_prism, v_cyl, r_cyl, h, percent;
+            a_prism = Number(prompt('Введите длину стороны правильного шестиугольника'));
+            h = 2 * a_prism; // высота цилиндра/призмы
+            v_prism = 3 * Math.sqrt(3) / 2 * a_prism ** 2 * h; // объём призмы
+            r_cyl = Math.sqrt(3) / 2 * a_prism; // радиус цилиндра
+            v_cyl = Math.PI * r_cyl ** 2 * h; // объём цилиндра
+            percent = (v_prism - v_cyl) / v_prism * 100;
+            document.write(`Длина стороны правильного шестиугольника: ${a_prism} </br>`);
+            document.write(`Высота цилиндра/призмы: ${h} </br>`);
+            document.write(`Радиус цилиндра: ${r_cyl} </br>`);
+            document.write(`Объём призмы: ${v_prism} </br>`);
+            document.write(`Объём цилиндра: ${v_cyl} </br>`);
+            document.write(`Процент материала, ушедшего в отход: ${percent} % </br>`);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

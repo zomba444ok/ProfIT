@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script>
+            function F(x){
+                return 3 * x - Math.sin(x) - 7;
+            }
+            function find_y(x1, x2, eps){
+                let x3 = (x2 - x1) / 2.0 + x1;
+                // находим решение в середине интервала
+                if(F(x3) == 0 || Math.abs(x2-x1) <= eps)
+                    return x3;
+                else
+                    if(F(x1) * F(x3) < 0) // решение находится в этом интервале
+                        return find_y(x1, x3, eps);
+                    else
+                        return find_y(x3, x2, eps); // иначе решение находится здесь
+            }
+            let x1, x2, eps, result;
+            x1 = Number(prompt('Введите x1'));
+            x2 = Number(prompt('Введите x2'));
+            eps = Number(prompt('Введите точность решения'));
+            if(Number.isNaN(x1) || Number.isNaN(x2) || Number.isNaN(eps)) {
+                document.write('Введено значение, которое не является числом');
+                throw ''; // завершает выполнение скрипта, если было введено не число
+            }
+            // поиск интервала изоляции
+            if( F(x1) * F(x2) > 0){
+                document.writeln(`На промежутке [${x1}, ${x2}] нет решения. Пожалуйста, введите другие значения.`);
+                throw '';            
+            }
+            if(x1 < x2)
+                result = find_y(x1, x2, eps);
+            else
+                result = find_y(x2, x1, eps);
+            document.write(`x1 = ${x1}, x2 = ${x2}, eps = ${eps} </br>`);
+            document.write(`Корень уравнения: ${result} </br>`);
+            document.write(`F(${result}) = ${F(result)} </br>`)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

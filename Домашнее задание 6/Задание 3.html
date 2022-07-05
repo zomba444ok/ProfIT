@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script>
+            'use strict'
+            let N, result_cnt, result_multi;
+            let arr = [];
+            let max_pos, min_pos;
+            let min = Number.MAX_SAFE_INTEGER;
+            let max = Number.MIN_SAFE_INTEGER;
+            N = Number(prompt('Введите размер массива'));
+            for(let i = 0; i < N; i++) {
+                arr.push(Math.floor(Math.random() * 100));
+                if( arr[i] > max ){
+                    max = arr[i];
+                    max_pos = i;
+                }
+                if( arr[i] < min){
+                    min = arr[i];
+                    min_pos = i;
+                }
+            }
+            for( let j = 0; j < min_pos || j < max_pos; j++) 
+                if( (j > min_pos && j < max_pos) || (j > max_pos && j < min_pos)){
+                    if (isNaN(result_cnt)){
+                        result_cnt = 0;
+                        result_multi = 1;
+                    }
+                    result_multi *= arr[j];
+                    result_cnt += 1;
+                }
+            document.write(arr, '</br>');
+            document.write(`Количество элементов: ${result_cnt} </br>`)
+            document.write(`Произведение элемнтов: ${result_multi} </br>`)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
